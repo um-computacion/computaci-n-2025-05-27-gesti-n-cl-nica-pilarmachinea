@@ -19,7 +19,7 @@ class TestEspecialidad(unittest.TestCase):
     def test_verificar_dia_valido(self):
         esp = Especialidad("Dermatología", ["lunes", "miércoles"])
         self.assertTrue(esp.verificar_dia("lunes"))
-        self.assertTrue(esp.verificar_dia("MiÉrColEs"))  # prueba con mayúsculas
+        self.assertTrue(esp.verificar_dia("MiÉrColEs"))  
         self.assertFalse(esp.verificar_dia("viernes"))
 
     def test_str_especialidad(self):

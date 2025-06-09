@@ -3,6 +3,7 @@ from clases.medico import Medico
 from clases.especialidad import Especialidad
 from clases.clinica import Clinica
 from datetime import datetime
+from clases.excepciones import PacienteNoEncontradoException, TurnoOcupadoException
 
 class CLI:
     def __init__(self):
@@ -37,10 +38,13 @@ class CLI:
                     case "9": self.ver_medicos()
                     case "0": print("Saliendo..."); break
                     case _: print("Opción inválida.")
+            except PacienteNoEncontradoException as e:
+                print(f"Paciente no encontrado: {e}")
+            except TurnoOcupadoException:
+                print("El turno ya está ocupado.")
             except Exception as e:
-                print(f"Error: {e}")
+                print(f"Error inesperado: {e}")
 
-    # ---------------- MÉTODOS ----------------
 
     def agregar_paciente(self):
         nombre = input("Nombre del paciente: ")
