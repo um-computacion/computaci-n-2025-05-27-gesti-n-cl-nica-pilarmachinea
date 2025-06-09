@@ -7,7 +7,7 @@ class Especialidad:
         return self.__tipo__
 
     def verificar_dia(self, dia):
-        return dia.lower() in self.__dias__  # 🔧 CORREGIDO
+        return dia.lower() in self.__dias__ 
 
     def __str__(self):
         dias_str = ", ".join(self.__dias__)
